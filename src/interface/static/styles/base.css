@@ -1,0 +1,93 @@
+:root {
+  color-scheme: dark light;
+  --bg: #0c0d10;
+  --surface: #14161b;
+  --surface-2: #1c1f26;
+  --border: #262a33;
+  --text: #e6e8ec;
+  --text-muted: #9aa3b2;
+  --accent: #6aa9ff;
+  --accent-strong: #4d8aff;
+  --success: #5ad19a;
+  --warning: #f0c674;
+  --danger: #ef6f6f;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+.brand-mark {
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, var(--accent), #b39bff);
+  border-radius: 4px;
+  display: inline-block;
+}
+.brand-name {
+  letter-spacing: 0.2px;
+}
+.topbar-meta {
+  color: var(--text-muted);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.topbar-meta button {
+  font-size: 12px;
+  padding: 4px 10px;
+}
+
+.app-root {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.empty-state {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-muted);
+}

@@ -1,0 +1,127 @@
+.dashboard-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.filters select,
+.filters input {
+  width: auto;
+  min-width: 160px;
+}
+
+.metric-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.metric {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+}
+.metric-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+}
+.metric-value {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.binding-table-wrapper {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.binding-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.binding-table th,
+.binding-table td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.binding-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+.binding-table th.sortable:hover {
+  color: var(--text);
+}
+.binding-table th.sortable:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+.binding-table th.sorted {
+  color: var(--text);
+}
+.binding-table th {
+  background: var(--surface-2);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-muted);
+}
+.binding-table tr:last-child td {
+  border-bottom: none;
+}
+.binding-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.vendor-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.vendor-cell strong {
+  font-weight: 500;
+  color: var(--text);
+}
+.vendor-cell small {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+@media (max-width: 700px) {
+  .binding-table thead { display: none; }
+  .binding-table tr {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .binding-table td {
+    border: none;
+    padding: 2px 0;
+  }
+  .binding-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--text-muted);
+  }
+}

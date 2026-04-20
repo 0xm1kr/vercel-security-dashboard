@@ -1,0 +1,164 @@
+{
+  "version": 1,
+  "vendors": [
+    { "id": "aws", "displayName": "AWS", "rotateUrl": "https://console.aws.amazon.com/iam/home#/security_credentials" },
+    { "id": "gcp", "displayName": "Google Cloud", "rotateUrl": "https://console.cloud.google.com/apis/credentials" },
+    { "id": "google-ai", "displayName": "Google AI Studio (Gemini)", "rotateUrl": "https://aistudio.google.com/apikey" },
+    { "id": "azure", "displayName": "Azure", "rotateUrl": "https://portal.azure.com/" },
+    { "id": "stripe", "displayName": "Stripe", "rotateUrl": "https://dashboard.stripe.com/apikeys" },
+    { "id": "neon", "displayName": "Neon", "rotateUrl": "https://console.neon.tech/" },
+    { "id": "supabase", "displayName": "Supabase", "rotateUrl": "https://supabase.com/dashboard/project/_/settings/api" },
+    { "id": "planetscale", "displayName": "PlanetScale", "rotateUrl": "https://app.planetscale.com/" },
+    { "id": "mongodb", "displayName": "MongoDB Atlas", "rotateUrl": "https://cloud.mongodb.com/" },
+    { "id": "clerk", "displayName": "Clerk", "rotateUrl": "https://dashboard.clerk.com/" },
+    { "id": "auth0", "displayName": "Auth0", "rotateUrl": "https://manage.auth0.com/" },
+    { "id": "sentry", "displayName": "Sentry", "rotateUrl": "https://sentry.io/settings/account/api/auth-tokens/" },
+    { "id": "datadog", "displayName": "Datadog", "rotateUrl": "https://app.datadoghq.com/organization-settings/api-keys" },
+    { "id": "openai", "displayName": "OpenAI", "rotateUrl": "https://platform.openai.com/api-keys" },
+    { "id": "anthropic", "displayName": "Anthropic", "rotateUrl": "https://console.anthropic.com/settings/keys" },
+    { "id": "twilio", "displayName": "Twilio", "rotateUrl": "https://console.twilio.com/" },
+    { "id": "sendgrid", "displayName": "SendGrid", "rotateUrl": "https://app.sendgrid.com/settings/api_keys" },
+    { "id": "github", "displayName": "GitHub", "rotateUrl": "https://github.com/settings/tokens" },
+    { "id": "firebase", "displayName": "Firebase", "rotateUrl": "https://console.firebase.google.com/" },
+    { "id": "upstash", "displayName": "Upstash", "rotateUrl": "https://console.upstash.com/" },
+    { "id": "qstash", "displayName": "Upstash QStash", "rotateUrl": "https://console.upstash.com/qstash" },
+    { "id": "vercel", "displayName": "Vercel", "rotateUrl": "https://vercel.com/account/tokens" },
+    { "id": "vercel-blob", "displayName": "Vercel Blob", "rotateUrl": "https://vercel.com/dashboard/stores" },
+    { "id": "vercel-ai-gateway", "displayName": "Vercel AI Gateway", "rotateUrl": "https://vercel.com/dashboard/ai" },
+    { "id": "alchemy", "displayName": "Alchemy", "rotateUrl": "https://dashboard.alchemy.com/apps" },
+    { "id": "railway", "displayName": "Railway", "rotateUrl": "https://railway.app/account/tokens" },
+    { "id": "coinbase-cdp", "displayName": "Coinbase Developer Platform", "rotateUrl": "https://portal.cdp.coinbase.com/access/api" },
+    { "id": "elevenlabs", "displayName": "ElevenLabs", "rotateUrl": "https://elevenlabs.io/app/settings/api-keys" },
+    { "id": "livekit", "displayName": "LiveKit", "rotateUrl": "https://cloud.livekit.io/" },
+    { "id": "privy", "displayName": "Privy", "rotateUrl": "https://dashboard.privy.io/" },
+    { "id": "amplitude", "displayName": "Amplitude", "rotateUrl": "https://app.amplitude.com/data/sources" },
+    { "id": "walletconnect", "displayName": "WalletConnect", "rotateUrl": "https://cloud.walletconnect.com/sign-in" },
+    { "id": "novu", "displayName": "Novu", "rotateUrl": "https://web.novu.co/settings/api-keys" },
+    { "id": "recaptcha", "displayName": "Google reCAPTCHA", "rotateUrl": "https://www.google.com/recaptcha/admin" },
+    { "id": "fal", "displayName": "fal.ai", "rotateUrl": "https://fal.ai/dashboard/keys" },
+    { "id": "openrouter", "displayName": "OpenRouter", "rotateUrl": "https://openrouter.ai/keys" },
+    { "id": "xai", "displayName": "xAI (Grok)", "rotateUrl": "https://console.x.ai/" },
+    { "id": "spindl", "displayName": "Spindl", "rotateUrl": "https://app.spindl.xyz/" },
+    { "id": "tripo", "displayName": "Tripo3D", "rotateUrl": "https://platform.tripo3d.ai/" },
+    { "id": "venice", "displayName": "Venice AI", "rotateUrl": "https://venice.ai/settings/api" },
+    { "id": "the-graph", "displayName": "The Graph", "rotateUrl": "https://thegraph.com/studio/apikeys/" }
+  ],
+  "rules": [
+    { "vendorId": "aws", "patternType": "prefix", "pattern": "AWS_", "confidence": 90 },
+    { "vendorId": "aws", "patternType": "exact", "pattern": "AMAZON_ACCESS_KEY_ID", "confidence": 95 },
+    { "vendorId": "aws", "patternType": "regex", "pattern": "^S3_(BUCKET|REGION|ACCESS).*", "confidence": 70 },
+
+    { "vendorId": "gcp", "patternType": "prefix", "pattern": "GCP_", "confidence": 90 },
+    { "vendorId": "gcp", "patternType": "prefix", "pattern": "GOOGLE_", "confidence": 60 },
+    { "vendorId": "gcp", "patternType": "exact", "pattern": "GOOGLE_APPLICATION_CREDENTIALS", "confidence": 95 },
+
+    { "vendorId": "google-ai", "patternType": "exact", "pattern": "GOOGLE_GENERATIVE_AI_API_KEY", "confidence": 99 },
+    { "vendorId": "google-ai", "patternType": "exact", "pattern": "GOOGLE_API_KEY", "confidence": 70 },
+    { "vendorId": "google-ai", "patternType": "exact", "pattern": "GEMINI_API_KEY", "confidence": 99 },
+    { "vendorId": "google-ai", "patternType": "prefix", "pattern": "GEMINI_", "confidence": 90 },
+
+    { "vendorId": "azure", "patternType": "prefix", "pattern": "AZURE_", "confidence": 90 },
+
+    { "vendorId": "stripe", "patternType": "prefix", "pattern": "STRIPE_", "confidence": 95 },
+
+    { "vendorId": "neon", "patternType": "prefix", "pattern": "NEON_", "confidence": 95 },
+    { "vendorId": "neon", "patternType": "regex", "pattern": ".*neon\\.tech.*", "confidence": 80 },
+
+    { "vendorId": "supabase", "patternType": "prefix", "pattern": "SUPABASE_", "confidence": 95 },
+    { "vendorId": "supabase", "patternType": "prefix", "pattern": "NEXT_PUBLIC_SUPABASE_", "confidence": 95 },
+
+    { "vendorId": "planetscale", "patternType": "prefix", "pattern": "PLANETSCALE_", "confidence": 95 },
+    { "vendorId": "planetscale", "patternType": "prefix", "pattern": "PSCALE_", "confidence": 90 },
+
+    { "vendorId": "mongodb", "patternType": "prefix", "pattern": "MONGODB_", "confidence": 90 },
+    { "vendorId": "mongodb", "patternType": "prefix", "pattern": "MONGO_", "confidence": 80 },
+    { "vendorId": "mongodb", "patternType": "exact", "pattern": "ATLAS_URI", "confidence": 80 },
+
+    { "vendorId": "clerk", "patternType": "prefix", "pattern": "CLERK_", "confidence": 95 },
+    { "vendorId": "clerk", "patternType": "prefix", "pattern": "NEXT_PUBLIC_CLERK_", "confidence": 95 },
+
+    { "vendorId": "auth0", "patternType": "prefix", "pattern": "AUTH0_", "confidence": 95 },
+
+    { "vendorId": "sentry", "patternType": "prefix", "pattern": "SENTRY_", "confidence": 95 },
+    { "vendorId": "sentry", "patternType": "prefix", "pattern": "NEXT_PUBLIC_SENTRY_", "confidence": 95 },
+
+    { "vendorId": "datadog", "patternType": "prefix", "pattern": "DATADOG_", "confidence": 95 },
+    { "vendorId": "datadog", "patternType": "prefix", "pattern": "DD_", "confidence": 70 },
+
+    { "vendorId": "openai", "patternType": "prefix", "pattern": "OPENAI_", "confidence": 95 },
+
+    { "vendorId": "anthropic", "patternType": "prefix", "pattern": "ANTHROPIC_", "confidence": 95 },
+    { "vendorId": "anthropic", "patternType": "prefix", "pattern": "CLAUDE_", "confidence": 80 },
+
+    { "vendorId": "twilio", "patternType": "prefix", "pattern": "TWILIO_", "confidence": 95 },
+
+    { "vendorId": "sendgrid", "patternType": "prefix", "pattern": "SENDGRID_", "confidence": 95 },
+
+    { "vendorId": "github", "patternType": "prefix", "pattern": "GITHUB_", "confidence": 90 },
+    { "vendorId": "github", "patternType": "prefix", "pattern": "GH_", "confidence": 70 },
+
+    { "vendorId": "firebase", "patternType": "prefix", "pattern": "FIREBASE_", "confidence": 95 },
+    { "vendorId": "firebase", "patternType": "prefix", "pattern": "NEXT_PUBLIC_FIREBASE_", "confidence": 95 },
+
+    { "vendorId": "upstash", "patternType": "prefix", "pattern": "UPSTASH_", "confidence": 95 },
+    { "vendorId": "upstash", "patternType": "prefix", "pattern": "KV_", "confidence": 60 },
+
+    { "vendorId": "qstash", "patternType": "prefix", "pattern": "QSTASH_", "confidence": 99 },
+
+    { "vendorId": "vercel", "patternType": "prefix", "pattern": "VERCEL_", "confidence": 95 },
+    { "vendorId": "vercel", "patternType": "prefix", "pattern": "NEXT_PUBLIC_VERCEL_", "confidence": 90 },
+    { "vendorId": "vercel", "patternType": "exact", "pattern": "CRON_SECRET", "confidence": 80 },
+
+    { "vendorId": "vercel-blob", "patternType": "exact", "pattern": "BLOB_READ_WRITE_TOKEN", "confidence": 99 },
+    { "vendorId": "vercel-blob", "patternType": "prefix", "pattern": "VERCEL_BLOB_", "confidence": 95 },
+
+    { "vendorId": "vercel-ai-gateway", "patternType": "exact", "pattern": "AI_GATEWAY_API_KEY", "confidence": 95 },
+    { "vendorId": "vercel-ai-gateway", "patternType": "prefix", "pattern": "AI_GATEWAY_", "confidence": 90 },
+
+    { "vendorId": "alchemy", "patternType": "prefix", "pattern": "ALCHEMY_", "confidence": 95 },
+    { "vendorId": "alchemy", "patternType": "prefix", "pattern": "NEXT_PUBLIC_ALCHEMY_", "confidence": 95 },
+
+    { "vendorId": "railway", "patternType": "prefix", "pattern": "RAILWAY_", "confidence": 95 },
+
+    { "vendorId": "coinbase-cdp", "patternType": "prefix", "pattern": "CDP_", "confidence": 95 },
+    { "vendorId": "coinbase-cdp", "patternType": "prefix", "pattern": "COINBASE_", "confidence": 80 },
+
+    { "vendorId": "elevenlabs", "patternType": "prefix", "pattern": "ELEVENLABS_", "confidence": 95 },
+    { "vendorId": "elevenlabs", "patternType": "prefix", "pattern": "ELEVEN_LABS_", "confidence": 95 },
+
+    { "vendorId": "livekit", "patternType": "prefix", "pattern": "LIVEKIT_", "confidence": 95 },
+
+    { "vendorId": "privy", "patternType": "prefix", "pattern": "PRIVY_", "confidence": 95 },
+    { "vendorId": "privy", "patternType": "prefix", "pattern": "NEXT_PUBLIC_PRIVY_", "confidence": 95 },
+
+    { "vendorId": "amplitude", "patternType": "prefix", "pattern": "AMPLITUDE_", "confidence": 95 },
+    { "vendorId": "amplitude", "patternType": "prefix", "pattern": "NEXT_PUBLIC_AMPLITUDE_", "confidence": 95 },
+
+    { "vendorId": "walletconnect", "patternType": "prefix", "pattern": "WALLETCONNECT_", "confidence": 95 },
+    { "vendorId": "walletconnect", "patternType": "prefix", "pattern": "NEXT_PUBLIC_WALLETCONNECT_", "confidence": 95 },
+    { "vendorId": "walletconnect", "patternType": "exact", "pattern": "NEXT_PUBLIC_WC_PROJECT_ID", "confidence": 90 },
+
+    { "vendorId": "novu", "patternType": "prefix", "pattern": "NOVU_", "confidence": 95 },
+    { "vendorId": "novu", "patternType": "prefix", "pattern": "NEXT_PUBLIC_NOVU_", "confidence": 95 },
+
+    { "vendorId": "recaptcha", "patternType": "prefix", "pattern": "RECAPTCHA_", "confidence": 95 },
+    { "vendorId": "recaptcha", "patternType": "prefix", "pattern": "NEXT_PUBLIC_RECAPTCHA_", "confidence": 95 },
+
+    { "vendorId": "fal", "patternType": "prefix", "pattern": "FAL_", "confidence": 95 },
+
+    { "vendorId": "openrouter", "patternType": "prefix", "pattern": "OPENROUTER_", "confidence": 95 },
+
+    { "vendorId": "xai", "patternType": "prefix", "pattern": "XAI_", "confidence": 95 },
+    { "vendorId": "xai", "patternType": "prefix", "pattern": "GROK_", "confidence": 80 },
+
+    { "vendorId": "spindl", "patternType": "prefix", "pattern": "SPINDL_", "confidence": 95 },
+    { "vendorId": "spindl", "patternType": "prefix", "pattern": "NEXT_PUBLIC_SPINDL_", "confidence": 95 },
+
+    { "vendorId": "tripo", "patternType": "prefix", "pattern": "TRIPO_", "confidence": 95 },
+
+    { "vendorId": "venice", "patternType": "prefix", "pattern": "VENICE_", "confidence": 95 },
+
+    { "vendorId": "the-graph", "patternType": "exact", "pattern": "SUBGRAPH_API_KEY", "confidence": 90 },
+    { "vendorId": "the-graph", "patternType": "prefix", "pattern": "THE_GRAPH_", "confidence": 95 }
+  ]
+}

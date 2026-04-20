@@ -1,0 +1,205 @@
+/* ---- Cards ---------------------------------------------------------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+.card + .card {
+  margin-top: 16px;
+}
+.card h1 {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+.card h2 {
+  margin: 0 0 16px;
+  font-size: 16px;
+}
+.card p {
+  margin: 0 0 12px;
+  color: var(--text-muted);
+}
+.card ol {
+  padding-left: 20px;
+  color: var(--text-muted);
+}
+
+/* ---- Forms ---------------------------------------------------------- */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.form-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-muted);
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+  width: 100%;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  outline: none;
+}
+input:focus,
+select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(106, 169, 255, 0.18);
+}
+.form-error {
+  color: var(--danger);
+  font-size: 13px;
+  margin: 0 0 8px;
+}
+
+/* ---- Buttons -------------------------------------------------------- */
+.button {
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  padding: 9px 14px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.12s ease, border-color 0.12s ease,
+    transform 0.05s ease;
+}
+.button:hover {
+  background: #232732;
+}
+.button:active {
+  transform: translateY(1px);
+}
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.button.primary {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: #0c0d10;
+}
+.button.primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.button.danger {
+  background: var(--danger);
+  border-color: var(--danger);
+  color: #1a1010;
+}
+.button.secondary {
+  background: transparent;
+}
+.button-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.icon-button {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: var(--radius);
+}
+.icon-button:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+/* ---- Notices, tags, status ----------------------------------------- */
+.notice {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  background: var(--surface-2);
+}
+.notice.success { border-color: rgba(90, 209, 154, 0.4); color: var(--success); }
+.notice.warn    { border-color: rgba(240, 198, 116, 0.4); color: var(--warning); }
+.notice.error   { border-color: rgba(239, 111, 111, 0.4); color: var(--danger);  }
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-size: 11px;
+  margin: 2px 4px 0 0;
+  color: var(--text-muted);
+}
+.tag.production { color: var(--warning); border-color: rgba(240, 198, 116, 0.5); }
+.tag.preview    { color: var(--accent); border-color: rgba(106, 169, 255, 0.5); }
+.tag.development{ color: var(--success); border-color: rgba(90, 209, 154, 0.5); }
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  display: inline-block;
+}
+.status.never .dot { background: var(--text-muted); }
+.status.rotated .dot { background: var(--success); }
+.status.superseded .dot { background: var(--warning); }
+
+/* ---- Compound checkbox controls ------------------------------------ */
+.target-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  cursor: pointer;
+}
+.target-checkbox input { accent-color: var(--accent); }
+
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 12px 0 16px;
+  padding: 10px 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 13px;
+  cursor: pointer;
+}
+.checkbox-row input { margin-top: 3px; accent-color: var(--accent); }
+.checkbox-row strong { display: block; margin-bottom: 2px; }
+.checkbox-help {
+  display: block;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.4;
+}

@@ -1,0 +1,17 @@
+.wizard {
+  max-width: 640px;
+  margin: 40px auto;
+}
+.wizard-steps {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+.wizard-step {
+  flex: 1;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+}
+.wizard-step.active { background: var(--accent); }
+.wizard-step.done   { background: var(--success); }

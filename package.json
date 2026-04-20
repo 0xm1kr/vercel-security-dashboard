@@ -1,0 +1,27 @@
+{
+  "name": "vercel-security-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local-first dashboard that inventories Vercel project environment variables, attributes them to likely third-party services, and supports controlled rotation via the Vercel REST API.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/main.js",
+    "dev": "tsc -p tsconfig.json && node dist/main.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test --import tsx --test-reporter=spec tests/domain/classifier.test.ts tests/domain/target.test.ts tests/infrastructure/crypto.test.ts tests/infrastructure/passphrase.test.ts tests/infrastructure/atomic-write.test.ts tests/infrastructure/file-credential-store.test.ts tests/infrastructure/vendor-rule-source.test.ts tests/infrastructure/vercel-mappers.test.ts tests/application/rotate-binding.test.ts tests/interface/origin-guard.test.ts tests/interface/throttle.test.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "11.3.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "7.6.11",
+    "@types/node": "20.14.10",
+    "tsx": "4.16.2",
+    "typescript": "5.5.3"
+  }
+}
